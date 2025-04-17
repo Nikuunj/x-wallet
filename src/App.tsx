@@ -1,12 +1,12 @@
 import { RecoilRoot } from 'recoil';
 import './App.css'
-import WalletView from './components/WalletView';
+import WalletViewSolana from './components/WalletView';
 
 function App() {
 
   return (
     <RecoilRoot>
-      <WalletView />
+      <WalletViewSolana />
     </RecoilRoot>
   )
 }
