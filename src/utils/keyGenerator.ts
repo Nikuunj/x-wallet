@@ -9,8 +9,8 @@ import { keyPair } from '../store/mnemonics';
 export function ethKeyGenerator(id: Number, seed: Buffer): keyPair {
 
     const path = `m/44'/60'/${id}'/0'`
-    const keyWallet = hdkey.fromMasterSeed(seed);
-    const wallet = keyWallet.derivePath(path).getWallet();
+    const Wallet = hdkey.fromMasterSeed(seed);
+    const wallet = Wallet.derivePath(path).getWallet();
     const privateKey = bufferToHex(wallet.getPrivateKey());
     const publicKey = bufferToHex(publicToAddress(wallet.getPublicKey(), true));
 

@@ -1,6 +1,8 @@
 import { memo } from "react"
 import { useRecoilState, useRecoilValue } from "recoil";
 import { ethKeyPairState, solKeyPairState, solYaEth } from "../store/mnemonics";
+import PrivateKey from "./PrivateKey";
+import PublicKeyComponent from "./PublicKeyComponent";
 
 function KeyComponent() {
 
@@ -14,12 +16,8 @@ function KeyComponent() {
 
   const renderAccSol =  solkeyPairArr.map((val, idx) => (
       <div key={idx} className={"w-full"}>
-        <p className={"overflow-hidden text-ellipsis"}>
-          {val.publicKey}
-        </p>
-        <p className={"overflow-hidden text-ellipsis"}>
-          {val.privateKey}
-        </p>
+        <PublicKeyComponent publicKey={val.publicKey} />
+        <PrivateKey keyPrivate={val.privateKey} />
         <hr />
     </div>
     ))
@@ -29,9 +27,7 @@ function KeyComponent() {
         <p className={"overflow-hidden text-ellipsis"}>
           {val.publicKey}
         </p>
-        <p className={"overflow-hidden text-ellipsis"}>
-          {val.privateKey}
-        </p>
+        <PrivateKey keyPrivate={val.privateKey} />
         <hr />
       </div>
   ))
@@ -40,7 +36,10 @@ function KeyComponent() {
     <div>
         {solYEth ? 'Sol' : 'Eth'}  Wallet 
         { solYEth ? renderAccSol : renderAccEth }
-        {renderAccEth && <div onClick={handleToggle}  className={"cursor-pointer"}> Toggle</div> }
+        <div>
+
+          {renderAccEth && <div onClick={handleToggle}  className={"cursor-pointer"}> Toggle</div> }
+        </div>
     </div>
   )
 }
