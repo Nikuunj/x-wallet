@@ -1,2 +1,8 @@
 @import "tailwindcss";
 
+
+* {
+    font-family: "VT323", monospace;
+    font-weight: 500;
+    font-size: large;
+}

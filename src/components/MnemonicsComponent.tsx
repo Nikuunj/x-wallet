@@ -26,12 +26,18 @@ function MnemonicsComponent() {
     }
 
     return (
-        <div>{mnemonics}
-        { !mnemonics && <div onClick={generate}  className={"cursor-pointer"}>
-            Generate Wallet
+        <div className={"flex flex-col gap-3 items-center justify-cente"}>
+            <div>
+                {mnemonics}
+            </div>
+        { !mnemonics && <div onClick={generate}  className={"cursor-pointer h-[90vh] flex justify-center items-center"}>
+            <span className={"bg-sky-100 text-zinc-900 px-7 rounded-lg py-2"}>Generate Wallet</span>
         </div>}
-        { mnemonics && <div onClick={clearAll} className={"cursor-pointer"}>Clear all</div>}
-        { mnemonics &&  <AddMoreWalletBtn />}
+        <div className={"flex gap-3"}>
+
+            { mnemonics && <div onClick={clearAll} className={"cursor-pointer bg-rose-800 text-zinc-300 px-4 py-1 roudned-lg"}>Clear all</div>}
+            { mnemonics &&  <AddMoreWalletBtn />}
+        </div>
         </div>
     )
 }

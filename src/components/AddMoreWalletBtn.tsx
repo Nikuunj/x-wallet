@@ -19,7 +19,7 @@ function AddMoreWalletBtn() {
     }
     
     return (
-        <div onClick={addWallet} className={"cursor-pointer"}> Add more</div>
+        <div onClick={addWallet} className={"cursor-pointer bg-slate-300 text-zinc-900 px-4 py-1 roudned-lg"}> Add more</div>
     )
 }
 
