@@ -34,9 +34,9 @@ function WalletView() {
 
     const renderAccSol =  solkeyPairArr.map((val, idx) => (
         <div key={idx}>
-            {val.publicKey}
+            public : {val.publicKey}
             <br />
-            {val.privateKey}
+            private : {val.privateKey}
             <hr />
         </div>
     ))
@@ -55,7 +55,7 @@ function WalletView() {
             <br /><br />
             {solYEth ? 'Sol' : 'Eth'}  Wallet
             { !mnemonics && <div onClick={generate}>
-                click me to generate
+                Generate Wallet
             </div>}
             { mnemonics && <div onClick={clearAll}>Clear all</div>}
             { mnemonics && <div onClick={addWallet}> Add more</div>}

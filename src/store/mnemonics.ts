@@ -69,7 +69,7 @@ export const EthKeyPairSelector = selector<keyPair[]>({
 
             const keyWallet = hdkey.fromMasterSeed(seed);
             const wallet = keyWallet.derivePath(path).getWallet();
-            const privateKey = bufferToHex(wallet.getPrivateKey());;
+            const privateKey = bufferToHex(wallet.getPrivateKey());
             const publicKey = bufferToHex(publicToAddress(wallet.getPublicKey(), true));
 
             return {
