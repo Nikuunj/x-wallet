@@ -22,7 +22,7 @@ function KeyComponent() {
   const renderAccSol = solkeyPairArr.map((val, idx) => (
     <div
       key={idx}
-      className="w-full outline-1 outline-gray-400 rounded-md px-2 py-4 overflow-x-auto"
+      className="w-full sm:max-w-md outline-1 outline-gray-400 rounded-md px-2 py-4 overflow-x-auto"
     >
       <PublicKeyComponent publicKey={val.publicKey} />
       <PrivateKey keyPrivate={val.privateKey} />
@@ -52,7 +52,7 @@ function KeyComponent() {
           <div className="flex">
             <div
               onClick={handleToggleSetSol}
-              className={`relative rounded-s-lg w-full max-w-24 sm:max-w-48 py-2 px-4 text-lg bg-transparent text-black duration-500 font-semibold border-2 border-r-0 overflow-hidden cursor-pointer ${
+              className={`relative rounded-s-lg w-full max-w-24  py-1 px-3 text-lg bg-transparent text-black duration-500 font-semibold border-2 border-r-0 overflow-hidden cursor-pointer ${
                 solYEth ? "text-blue-900" : "text-zinc-400"
               }`}
             >
@@ -66,7 +66,7 @@ function KeyComponent() {
 
             <div
               onClick={handleToggleSetEth}
-              className={`relative w-full max-w-24 sm:max-w-48 rounded-e-lg py-2 px-4 text-lg bg-transparent text-black duration-500 font-semibold border-2 border-s-0 overflow-hidden cursor-pointer ${
+              className={`relative w-full max-w-24 rounded-e-lg py-1 px-3 text-lg bg-transparent text-black duration-500 font-semibold border-2 border-s-0 overflow-hidden cursor-pointer ${
                 !solYEth ? "text-blue-900" : "text-zinc-400"
               }`}
             >

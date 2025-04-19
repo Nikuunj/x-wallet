@@ -4,7 +4,6 @@ import MnemonicsComponent from "./MnemonicsComponent";
 
 
 function WalletView() {
-
     return (
         <div className={"grid gap-3"}>
             <MnemonicsComponent />
