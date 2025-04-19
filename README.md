@@ -1,21 +1,20 @@
-Sure! Here's the updated README including a top image banner. Make sure to replace the placeholder image path (`/assets/x-wallet-banner.png`) with the actual path to your banner image (you can place the image in the `public` folder of your project and adjust the path accordingly).
 
----
 
-```markdown
 # X-Wallet
 
-![X-Wallet Banner](/assets/x-wallet-banner.png)
 
 **X-Wallet** is a modern, cross-chain cryptocurrency wallet designed to simplify and enhance your Web3 experience. Built with React, TypeScript, and Vite, it offers a seamless interface for managing digital assets across multiple blockchains.
 
+![X-Wallet Banner](/assets/image.png)
+
+
 ## 🚀 Features
 
-- **Cross-Chain Support**: Interact with multiple blockchain networks effortlessly.
-- **Secure Wallet Management**: Create, import, and manage wallets with robust security measures.
-- **Real-Time Balance Tracking**: Monitor your asset balances in real-time.
-- **Transaction History**: View detailed records of your past transactions.
-- **User-Friendly Interface**: Navigate through an intuitive and responsive UI.
+- **Cross-Chain Support**:Interact with multiple blockchain networks effortlessly
+- **Secure Wallet Management**:Create, import, and manage wallets with robust security measures
+- **Real-Time Balance Tracking**:Monitor your asset balances in real-time
+- **Transaction History**:View detailed records of your past transactions
+- **User-Friendly Interface**:Navigate through an intuitive and responsive UI
 
 ## 🛠️ Installation
 
@@ -44,18 +43,18 @@ To set up the project locally:
 
 ## 📁 Project Structure
 
-- `src/`: Contains the main source code, including components, pages, and utilities.
-- `public/`: Static assets and the main HTML file.
-- `index.html`: The entry point of the application.
-- `vite.config.ts`: Configuration file for Vite.
-- `package.json`: Lists project dependencies and scripts.
+- `src/: Contains the main source code, including components, pages, and utilitis.
+- `public/: Static assets and the main HTML fie.
+- `index.html: The entry point of the applicatin.
+- `vite.config.ts: Configuration file for Vie.
+- `package.json: Lists project dependencies and scrips.
 
 ## 📦 Built With
 
 - [React](https://reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Vite](https://vitejs.dev/)
-- [ESLint](https://eslint.org/) for code linting
+- [ESLint](https://eslint.or/) for code lining
 
 ## 🤝 Contributing
 
@@ -84,9 +83,12 @@ Contributions are welcome! If you'd like to contribute:
 
 Please ensure your code adheres to the project's coding standards and passes all linting checks.
 
-## 📄 License
+## 📄 Licnse
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICNSE).
 
+## 📬 Contact
 
-Let me know if you want help designing the banner or uploading it properly!
+For any inquiries or feedback, please reach out to [Nikuunj](https://github.com/Nikuunj).
+
+---
