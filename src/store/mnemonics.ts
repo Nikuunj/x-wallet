@@ -21,7 +21,7 @@ export const mnemonicsState = atom<string>({
     default: seletDefault
 })
 
-export const seedSelector = selector<Buffer>({
+export const seedSelector = selector<Uint8Array>({
     key: 'seedSelector',
     get: ({ get }) => {
         const mnemonics = get(mnemonicsState);
