@@ -55,7 +55,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       plugins: [
-        rollupNodePolyFill(), // ✅ include this in build
+        rollupNodePolyFill() as unknown as any,
       ],
     },
   },
