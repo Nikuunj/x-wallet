@@ -4,9 +4,13 @@ import tailwindcss from '@tailwindcss/vite';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
 import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
 import path from 'path';
+import rollupNodePolyFill from 'rollup-plugin-node-polyfills'; // ✅ add this
 
 export default defineConfig({
-  plugins: [react(), tailwindcss()],
+  plugins: [
+    react(),
+    tailwindcss(),
+  ],
   resolve: {
     alias: {
       buffer: 'buffer',
@@ -15,10 +19,10 @@ export default defineConfig({
       process: 'process/browser',
       assert: 'assert',
       util: 'util',
-      '@': path.resolve(__dirname, 'src')
+      store: 'store',
+      '@': path.resolve(__dirname, 'src'),
     },
   },
-  
   define: {
     global: 'globalThis',
     'process.env': {},
@@ -45,6 +49,13 @@ export default defineConfig({
           process: true,
         }),
         NodeModulesPolyfillPlugin(),
+      ],
+    },
+  },
+  build: {
+    rollupOptions: {
+      plugins: [
+        rollupNodePolyFill(), // ✅ include this in build
       ],
     },
   },
