@@ -2,6 +2,7 @@ import { mnemonicToSeedSync } from 'bip39';
 import { atom, selector } from 'recoil'
 import { ethKeyGenerator, solKeyGenerator } from '../utils/keyGenerator';
 
+
 export interface keyPair {
     privateKey: string;
     publicKey: string;

@@ -9,7 +9,7 @@ function MnemonicsArray({ mnemonic }: { mnemonic: string }) {
     const [open , setOpen] = useState<boolean>(false);
     const TextToArr = mnemonic.split(' ');;
     const rednerArr = TextToArr.map((val, i) => (
-        <div className={"bg-zinc-800 px-2 py-1 rounded-md"}>
+        <div className={"bg-zinc-800 px-2 py-1 rounded-md"} key={i}>
             {i + 1} {val}
         </div>
     ))
