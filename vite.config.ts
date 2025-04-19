@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react';
 import tailwindcss from '@tailwindcss/vite';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
 import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
@@ -11,26 +12,37 @@ export default defineConfig({
       buffer: 'buffer',
       stream: 'stream-browserify',
       crypto: 'crypto-browserify',
-      process: 'process/browser', // ✅ Add this line
+      process: 'process/browser',
+      assert: 'assert',
+      util: 'util',
+      '@': path.resolve(__dirname, 'src')
     },
   },
+  
   define: {
     global: 'globalThis',
-    'process.env': {},           // ✅ Add this line
-    'process.browser': true,     // ✅ Add this line
+    'process.env': {},
+    'process.browser': true,
   },
   optimizeDeps: {
-    include: ['buffer', 'stream-browserify', 'crypto-browserify', 'process'], // ✅ Add 'process'
+    include: [
+      'buffer',
+      'stream-browserify',
+      'crypto-browserify',
+      'process',
+      'assert',
+      'util',
+    ],
     esbuildOptions: {
       define: {
         global: 'globalThis',
-        'process.env': '{}',         // ✅ Add this
-        'process.browser': 'true',   // ✅ Add this
+        'process.env': '{}',
+        'process.browser': 'true',
       },
       plugins: [
         NodeGlobalsPolyfillPlugin({
           buffer: true,
-          process: true, // ✅ Add this to ensure proper polyfill
+          process: true,
         }),
         NodeModulesPolyfillPlugin(),
       ],
