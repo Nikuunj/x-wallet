@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { NodeGlobalsPolyfillPlugin } from '@esbuild-plugins/node-globals-polyfill';
 import { NodeModulesPolyfillPlugin } from '@esbuild-plugins/node-modules-polyfill';
 import path from 'path';
-import rollupNodePolyFill from 'rollup-plugin-node-polyfills'; // ✅ add this
+import nodePolyfills  from 'rollup-plugin-node-polyfills'; // ✅ add this
 
 export default defineConfig({
   plugins: [
@@ -55,7 +55,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       plugins: [
-        rollupNodePolyFill() as unknown as any,
+        nodePolyfills() as unknown as any,
       ],
     },
   },

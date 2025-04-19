@@ -1,54 +1,92 @@
-# React + TypeScript + Vite
+Sure! Here's the updated README including a top image banner. Make sure to replace the placeholder image path (`/assets/x-wallet-banner.png`) with the actual path to your banner image (you can place the image in the `public` folder of your project and adjust the path accordingly).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+```markdown
+# X-Wallet
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![X-Wallet Banner](/assets/x-wallet-banner.png)
 
-## Expanding the ESLint configuration
+**X-Wallet** is a modern, cross-chain cryptocurrency wallet designed to simplify and enhance your Web3 experience. Built with React, TypeScript, and Vite, it offers a seamless interface for managing digital assets across multiple blockchains.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- **Cross-Chain Support**: Interact with multiple blockchain networks effortlessly.
+- **Secure Wallet Management**: Create, import, and manage wallets with robust security measures.
+- **Real-Time Balance Tracking**: Monitor your asset balances in real-time.
+- **Transaction History**: View detailed records of your past transactions.
+- **User-Friendly Interface**: Navigate through an intuitive and responsive UI.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+To set up the project locally:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+1. **Clone the repository**:
+
+   ```bash
+   git clone https://github.com/Nikuunj/x-wallet.git
+   cd x-wallet
+   ```
+
+2. **Install dependencies**:
+
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server**:
+
+   ```bash
+   npm run dev
+   ```
+
+   The application will be available at `http://localhost:5173/` by default.
+
+## 📁 Project Structure
+
+- `src/`: Contains the main source code, including components, pages, and utilities.
+- `public/`: Static assets and the main HTML file.
+- `index.html`: The entry point of the application.
+- `vite.config.ts`: Configuration file for Vite.
+- `package.json`: Lists project dependencies and scripts.
+
+## 📦 Built With
+
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [ESLint](https://eslint.org/) for code linting
+
+## 🤝 Contributing
+
+Contributions are welcome! If you'd like to contribute:
+
+1. **Fork the repository**.
+2. **Create a new branch**:
+
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+
+3. **Commit your changes**:
+
+   ```bash
+   git commit -m 'Add YourFeature'
+   ```
+
+4. **Push to the branch**:
+
+   ```bash
+   git push origin feature/YourFeature
+   ```
+
+5. **Open a pull request**.
+
+Please ensure your code adheres to the project's coding standards and passes all linting checks.
+
+## 📄 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+
+Let me know if you want help designing the banner or uploading it properly!
