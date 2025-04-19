@@ -31,7 +31,7 @@ function MnemonicsComponent() {
             <div>
                 <MnemonicsArray mnemonic={mnemonics} />
             </div>
-        { !mnemonics && <div  className={" h-[90vh] flex justify-center items-center"}>
+        { !mnemonics && <div  className={" h-[80vh] flex justify-center items-center"}>
             <span className={"bg-sky-100 text-zinc-900 px-7 rounded-lg py-2 cursor-pointer"} onClick={generate}>Generate Wallet</span>
         </div>}
         <div className={"flex gap-3"}>
