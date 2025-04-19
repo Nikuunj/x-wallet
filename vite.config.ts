@@ -15,7 +15,6 @@ export default defineConfig({
   },
   define: {
     global: 'globalThis',
-    'process.env': {},
   },
   optimizeDeps: {
     include: ['buffer', 'stream-browserify', 'crypto-browserify'],
@@ -26,7 +25,6 @@ export default defineConfig({
       plugins: [
         NodeGlobalsPolyfillPlugin({
           buffer: true,
-          process: true,
         }),
         NodeModulesPolyfillPlugin(),
       ],
