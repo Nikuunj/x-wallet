@@ -24,6 +24,8 @@ export default defineConfig({
   resolve: {
     alias: {
       buffer: 'buffer',
+      stream: 'stream-browserify',
+      crypto: 'crypto-browserify',
     }
-  }
+  }  
 });

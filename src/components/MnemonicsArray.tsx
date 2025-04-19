@@ -4,6 +4,7 @@ import { copyHandle } from "../utils/copyText";
 import UpIcon from "../icons/UpIcon";
 import DownIcon from "../icons/DownIcon";
 
+
 function MnemonicsArray({ mnemonic }: { mnemonic: string }) {
 
     const [open , setOpen] = useState<boolean>(false);

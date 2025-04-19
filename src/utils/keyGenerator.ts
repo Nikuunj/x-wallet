@@ -5,6 +5,7 @@ import nacl from 'tweetnacl';
 import { derivePath } from 'ed25519-hd-key';
 import { Keypair } from '@solana/web3.js'
 import { keyPair } from '../store/mnemonics';
+import { Buffer } from 'buffer/';
  
 export function ethKeyGenerator(id: Number, seed: Buffer): keyPair {
 
