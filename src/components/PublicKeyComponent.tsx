@@ -3,7 +3,7 @@ import { copyHandle } from "../utils/copyText"
 
 function PublicKeyComponent({ publicKey }: { publicKey: string }) {
   return (
-    <div className={"grid grid-cols-20 gap-2"}>
+    <div className={"grid grid-cols-20 gap-2 px-2 sm:px-0"}>
       <div className={"flex gap-2 col-span-17"}>
         <div className={"min-w-max"}>
           Public Key:

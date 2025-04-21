@@ -1,7 +1,6 @@
 import { mnemonicToSeedSync } from 'bip39';
 import { atom, selector } from 'recoil'
 import { ethKeyGenerator, solKeyGenerator } from '../utils/keyGenerator';
-import { Buffer } from 'buffer/';
 
 export interface keyPair {
     privateKey: string;
@@ -21,7 +20,7 @@ export const mnemonicsState = atom<string>({
     default: seletDefault
 })
 
-export const seedSelector = selector<Uint8Array>({
+export const seedSelector = selector<Buffer>({
     key: 'seedSelector',
     get: ({ get }) => {
         const mnemonics = get(mnemonicsState);
@@ -57,6 +56,7 @@ export const ethKeyPairSelector = selector<keyPair[]>({
         const numberOfAcc = parseInt(numberOfAccLocalStore);
         const keyPairArr: keyPair[] = Array(numberOfAcc).fill(0).map(( _ , idx) => {
             return ethKeyGenerator(idx, seed);
+            
         })
         
         return keyPairArr

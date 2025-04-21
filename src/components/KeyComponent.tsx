@@ -22,7 +22,7 @@ function KeyComponent() {
   const renderAccSol = solkeyPairArr.map((val, idx) => (
     <div
       key={idx}
-      className="w-full sm:max-w-md outline-1 outline-gray-400 rounded-md px-2 py-4 overflow-x-auto"
+      className="w-full sm:max-w-md outline-1 outline-gray-400 rounded-md px-3 py-4 overflow-x-auto"
     >
       <PublicKeyComponent publicKey={val.publicKey} />
       <PrivateKey keyPrivate={val.privateKey} />
@@ -32,7 +32,7 @@ function KeyComponent() {
   const renderAccEth = ethKeyPairArr.map((val, idx) => (
     <div
       key={idx}
-      className="w-full sm:max-w-md outline-1 outline-gray-400 rounded-md px-2 py-4 overflow-x-auto"
+      className="w-full sm:max-w-md outline-1 outline-gray-400 rounded-md px-3 py-4 overflow-x-auto"
     >
       <PublicKeyComponent publicKey={val.publicKey} />
       <PrivateKey keyPrivate={val.privateKey} />
