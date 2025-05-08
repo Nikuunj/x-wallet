@@ -5,6 +5,7 @@ import { ethKeyGenerator, solKeyGenerator } from '../utils/keyGenerator';
 export interface keyPair {
     privateKey: string;
     publicKey: string;
+    balance: number;
 }
 const seletDefault = selector<string>({
     key: 'seletDefault',
@@ -29,39 +30,65 @@ export const seedSelector = selector<Buffer>({
     }
 })
 export const solanaKeyPairSelector = selector<keyPair[]>({
-    key: 'solanaKeyPairSelector/defalut',
-    get: ({ get }) => {
+    key: 'solanaKeyPairSelector/default',
+    get: async ({ get }) => {
         const numberOfAccLocalStore = localStorage.getItem('numberOfAcc');
-        if(!numberOfAccLocalStore) return []
+        if (!numberOfAccLocalStore) return [];
+
         const seed = get(seedSelector);
         const numberOfAcc = parseInt(numberOfAccLocalStore);
-        const keyPairArr: keyPair[] = Array(numberOfAcc).fill(0).map(( _ , idx) => {
-            return solKeyGenerator(idx , seed);
-        })
-        
-        return keyPairArr
+
+        const keyPairPromises = Array(numberOfAcc).fill(0).map(async (_, idx) => {
+            try {
+                const keyPair = await solKeyGenerator(idx, seed);
+                return keyPair;
+            } catch (error) {
+                console.error('Error generating keyPair:', error);
+                return {
+                    privateKey: "privateKeyEncoded",
+                    publicKey: "publicKeyEncoded",
+                    balance: 0
+                };
+            }
+        });
+
+        const keyPairArr = await Promise.all(keyPairPromises);
+        console.log('keyPairArr', keyPairArr);
+        return keyPairArr;
     }
-})
+});
+
 
 export const solKeyPairState = atom<keyPair[]>({
     key: 'solKeyPairState',
     default: solanaKeyPairSelector
 })
 export const ethKeyPairSelector = selector<keyPair[]>({
-    key: 'EthKeyPairSelector/defalut',
-    get: ({ get }) => {
+    key: 'EthKeyPairSelector/default',
+    get: async ({ get }) => {
         const numberOfAccLocalStore = localStorage.getItem('numberOfAcc');
-        if(!numberOfAccLocalStore) return []
+        if (!numberOfAccLocalStore) return [];
+
         const seed = get(seedSelector);
         const numberOfAcc = parseInt(numberOfAccLocalStore);
-        const keyPairArr: keyPair[] = Array(numberOfAcc).fill(0).map(( _ , idx) => {
-            return ethKeyGenerator(idx, seed);
-            
-        })
-        
-        return keyPairArr
+
+        // Generate all keyPairs concurrently and wait for them to resolve
+        const keyPairPromises = Array.from({ length: numberOfAcc }, (_, idx) =>
+            ethKeyGenerator(idx, seed).catch((error) => {
+                console.error(`Error generating keyPair ${idx}:`, error);
+                return {
+                    privateKey: "privateKeyEncoded",
+                    publicKey: "publicKeyEncoded",
+                    balance: 0
+                };
+            })
+        );
+
+        const keyPairArr = await Promise.all(keyPairPromises);
+        return keyPairArr;
     }
-})
+});
+
 
 export const ethKeyPairState = atom<keyPair[]>({
     key: 'ethKeyPairState',

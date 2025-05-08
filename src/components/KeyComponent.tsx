@@ -26,6 +26,7 @@ function KeyComponent() {
     >
       <PublicKeyComponent publicKey={val.publicKey} />
       <PrivateKey keyPrivate={val.privateKey} />
+      <div className="text-lg text-gray-400">Balance: {val.balance} SOL</div>
     </div>
   ));
 
@@ -36,6 +37,7 @@ function KeyComponent() {
     >
       <PublicKeyComponent publicKey={val.publicKey} />
       <PrivateKey keyPrivate={val.privateKey} />
+      <div className="text-lg text-gray-400">Balance: {val.balance} Eth</div>
     </div>
   ));
 
